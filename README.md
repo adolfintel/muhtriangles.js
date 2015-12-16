@@ -14,7 +14,7 @@ Remember to include a fallback if you're planning to support older browsers too.
 ## Basic usage
 
 1. Include muhTriangles.min.js into your page.
-1. call new MuhTriangles('<your canvas id here>')
+1. call new MuhTriangles('your canvas id here')
 
 To tweak the settings, you can use `editor.html`, and copy the string at the bottom, then in your page you can call `new MuhTriangles('<your canvas id here>','<string from editor>')`
 
