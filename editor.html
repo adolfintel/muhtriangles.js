@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MuhTriangles Editor</title>
+<script type="text/javascript" src="muhTriangles.min.js"></script>
+<script type="text/javascript">
+	function E(id){
+		return document.getElementById(id);
+	}
+	function V(id){
+		return E(id).value;
+	}
+	String.prototype.isBlank=function(){
+		return !this || /^\s*$/.test(this);
+	}
+	
+	function hueModeChanged(){
+		if(V("hueMode")=="cycle"){
+			E("period").style.display="";
+			E("hue").style.display="none";
+		}else{
+			E("period").style.display="none";
+			E("hue").style.display="";
+		}
+	}
+	function outlineChanged(){
+		if(V("outline")=="true"){
+			E("outlineStyle").style.display="";
+			E("outlineThick").style.display="";
+		}else{
+			E("outlineStyle").style.display="none";
+			E("outlineThick").style.display="none";
+		}
+	}
+	function applySettings(){
+		var s={};
+		try{
+			s.saturation=Number(V("saturation"));
+			if(isNaN(s.saturation)) throw "Saturation";
+			if(V("hueMode")=="cycle"){
+				s.huePeriod=Number(V("huePeriod"));
+				if(isNaN(s.huePeriod)||s.huePeriod<1) throw "Hue period";
+			}else{
+				s.customHue=Number(V("customHue"));
+				if(isNaN(s.customHue)) throw "Hue";
+			}
+			s.lightness=Number(V("lightness"));
+			if(isNaN(s.lightness)) throw "Lightness";
+			s.outline=V("outline")=="true";
+			if(s.outline){
+				s.outlineColor=V("outlineColor");
+				var dummy=document.createElement("div");
+				dummy.style.backgroundColor=s.outlineColor;
+				document.body.appendChild(dummy);
+				if(dummy.style.backgroundColor.isBlank()){
+					document.body.removeChild(dummy);
+					throw "Outline style";
+				}else document.body.removeChild(dummy);
+				s.outlineThickness=Number(V("outlineThickness"));
+				if(isNaN(s.outlineThickness)) throw "Outline thickness";
+			}
+			s.gradientType=V("gradientType");
+			s.gradientIntensity=Number(V("gradientIntensity"));
+			if(isNaN(s.gradientIntensity)) throw "Gradient intensity";
+			s.gradientMode=V("gradientMode");
+			s.gradientInvert=V("gradientInvert")=="true";
+			s.speed=Number(V("speed"));
+			if(isNaN(s.speed)) throw "Speed";
+			s.instability=Number(V("instability"));
+			if(isNaN(s.instability)) throw "Animation intensity";
+			s.density=Number(V("density"));
+			if(isNaN(s.density)||s.density<=0) throw "Triangle density";
+			s.responsiveDensity=V("responsiveDensity")=="true";
+			s.model=V("model");
+			s.fps=Number(V("fpsLimit"));
+			if(isNaN(s.fps)||s.fps<1) throw "FPS limit";
+		}catch(e){
+			alert("Invalid "+e);
+			return;
+		}
+		E("json").innerHTML=JSON.stringify(s);
+		new MuhTriangles("canvas",s);
+	}
+</script>
+<style type="text/css">
+	html,body{
+		padding:0;
+		margin:0;
+		font-family:"Roboto","Segoe UI",sans-serif;
+		font-weight:300;
+	}
+	div.fixedContainer{
+		position:fixed;
+		top:0;
+		left:0;
+		width:100%;
+		height:100%;
+	}
+	canvas{
+		width:100%;
+		height:100%;
+	}
+	div.controls{
+		position:absolute;
+		width:100%;
+		bottom:0;
+		background-color:rgba(0,0,0,0.4);
+		color:#FFFFFF;
+		max-height:3rem;
+		border-top:0.1rem solid rgba(255,255,255,0.2);
+	}
+	div.controls:hover{
+		max-height:90%;
+		overflow-y:auto;
+	}
+	div.controls>div.header{
+		height:3rem;
+		text-align:center;
+		font-size:2em;
+		line-height:3rem;
+		text-transform:uppercase;
+		background-color:rgba(0,0,0,0.4);
+	}
+	div.controls>form{
+		margin:2rem auto 2rem auto;
+		text-align:center;
+	}
+	input[type="submit"]{
+		display:block;
+		margin-left:auto; margin-right: auto;
+		margin-top:2rem;
+		padding:0.5rem 2rem 0.5rem 2rem;
+		border:1px solid #0092ff;
+		background-color:#20A0FF;
+		color:#FFFFFF;
+		border-radius:0.15rem;
+		text-transform:uppercase;
+		font-size:1rem;
+	}
+	input[type="submit"]:hover{
+		background-color:#55b7ff;
+	}
+	input[type="submit"]:active{
+		background-color:#0092ff;
+	}
+	div.setting{
+		display:block;
+		width:100%;
+		margin-top:1rem;
+		margin-bottom:1rem;
+		text-align:center;
+	}
+	div.setting>div.name{
+		min-width:10rem;
+		display:inline-block;
+	}
+	div.setting>input, div.setting>select{
+		min-width:15rem;
+		background-color:rgba(255,255,255,0.6);
+		text-align:center;
+		border:none;
+		padding:0;
+		margin:0;
+		display:inline-block;
+		font-size:1rem;
+	}
+	div.setting > select option{
+		text-align:center;
+	}
+	#json{
+		font-family:"Consolas", "Lucida Console", monospace;
+		font-size:0.75rem;
+		margin-top:1rem;
+		width:95%;
+		overflow-x:auto;
+		display:block;
+		margin-left:auto;
+		margin-right:auto;
+	}
+	
+</style>
+</head>
+<body onload="hueModeChanged(); outlineChanged(); applySettings();">
+<div class="fixedContainer" style="z-index:1">
+	<canvas id="canvas"></canvas>
+</div>
+<div class="fixedContainer" style="z-index:2">
+	<div class="controls">
+		<div class="header">Settings</div>
+		<form action="javascript:applySettings()">
+			<div class="setting">
+				<div class="name">Saturation</div>
+				<input type="text" id="saturation" value="1.0"/>
+			</div>
+			<div class="setting">
+				<div class="name">Color mode</div>
+				<select id="hueMode" onchange="hueModeChanged()">
+					<option value="cycle" selected="selected">Cycle</option>
+					<option value="fixed">Fixed hue</option>
+				</select>
+			</div>
+			<div class="setting" id="period">
+				<div class="name">Hue period (seconds)</div>
+				<input type="text" id="huePeriod" value="86400"/>
+			</div>
+			<div class="setting" id="hue">
+				<div class="name">Hue (0-360)</div>
+				<input type="text" id="customHue" value="263"/>
+			</div>
+			<div class="setting">
+				<div class="name">Lightness</div>
+				<input type="text" id="lightness" value="1.0"/>
+			</div>
+			<div class="setting">
+				<div class="name">Outline</div>
+				<select id="outline" onchange="outlineChanged()">
+					<option value="true" selected="selected">Yes</option>
+					<option value="false">No</option>
+				</select>
+			</div>
+			<div class="setting" id="outlineStyle">
+				<div class="name">Outline style</div>
+				<input type="text" id="outlineColor" value="rgba(255,255,255,0.12)"/>
+			</div>
+			<div class="setting" id="outlineThick">
+				<div class="name">Outline thickness</div>
+				<input type="text" id="outlineThickness" value="1"/>
+			</div>
+			<div class="setting">
+				<div class="name">Gradient type</div>
+				<select id="gradientType">
+					<option value="radial" selected="selected">Radial</option>
+					<option value="horizontal">Horizontal</option>
+					<option value="vertical">Vertical</option>
+					<option value="diagonal1">Diagonal 1</option>
+					<option value="diagonal2">Diagonal 2</option>
+					<option value="random">Random intensity</option>
+				</select>
+			</div>
+			<div class="setting">
+				<div class="name">Gradient intensity</div>
+				<input type="text" id="gradientIntensity" value="1.0"/>
+			</div>
+			<div class="setting">
+				<div class="name">Smoother gradient</div>
+				<select id="gradientMode">
+					<option value="smooth" selected="selected">Yes</option>
+					<option value="rough">No</option>
+				</select>
+			</div>
+			<div class="setting">
+				<div class="name">Invert gradient</div>
+				<select id="gradientInvert">
+					<option value="true">Yes</option>
+					<option value="false" selected="selected">No</option>
+				</select>
+			</div>
+			<div class="setting">
+				<div class="name">Animation speed</div>
+				<input type="text" id="speed" value="1.0"/>
+			</div>
+			<div class="setting">
+				<div class="name">Animation intensity</div>
+				<input type="text" id="instability" value="1.0"/>
+			</div>
+			<div class="setting">
+				<div class="name">Triangle density</div>
+				<input type="text" id="density" value="1.0"/>
+			</div>
+			<div class="setting">
+				<div class="name">Responsive density</div>
+				<select id="responsiveDensity">
+					<option value="true" selected="selected">Yes</option>
+					<option value="false">No</option>
+				</select>
+			</div>
+			<div class="setting">
+				<div class="name">Model</div>
+				<select id="model">
+					<option value="hexagons" selected="selected">Hexagons</option>
+					<option value="mesh">Mesh</option>
+				</select>
+			</div>
+			<div class="setting">
+				<div class="name">FPS Limit</div>
+				<input type="text" id="fpsLimit" value="22"/>
+			</div>
+			<input type="submit" value="Apply" />
+			<div id="json"></div>
+		</form>
+	</div>
+</div>
+</body>
+</html>
