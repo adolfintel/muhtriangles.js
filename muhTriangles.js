@@ -203,3 +203,5 @@ MuhTriangles.prototype={
 }
 
 MuhTriangles.destroy=MuhTriangles.prototype.destroy;
+
+if(module && module.exports) module.exports = MuhTriangles;
