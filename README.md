@@ -71,7 +71,7 @@ To use this version in your page, you will need to copy both muhTriangles.min.js
 [![Screenshot](http://adolfintel.com/muhTriangles.js/widep.png)](http://adolfintel.com/muhTriangles/wide.png)
 
 ## License
-Copyright (C) 2015 Federico Dossena
+Copyright (C) 2016 Federico Dossena
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Lesser General Public License as published by

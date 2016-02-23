@@ -90,8 +90,8 @@ MuhTriangles.prototype={
 			document.body.removeChild(dummy);
 		}
 		this.DAMPEN=3/this.INSTABILITY;
-		canvas.width=canvas.clientWidth<10?10:canvas.clientWidth;
-		canvas.height=canvas.clientHeight<10?10:canvas.clientHeight;
+		canvas.width=(canvas.clientWidth<10?10:canvas.clientWidth)*(window.devicePixelRatio||1);
+		canvas.height=(canvas.clientHeight<10?10:canvas.clientHeight)*(window.devicePixelRatio||1);
 		var NX,NY;
 		if(canvas.width<canvas.height){
 			NX=1/this.SX;
