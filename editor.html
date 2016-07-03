@@ -100,7 +100,7 @@
 		width:100%;
 		height:100%;
 	}
-	div.controls{
+	#controls{
 		position:absolute;
 		width:100%;
 		bottom:0;
@@ -109,19 +109,20 @@
 		max-height:3rem;
 		border-top:0.1rem solid rgba(255,255,255,0.2);
 	}
-	div.controls:hover{
+	#controls.expanded{
 		max-height:90%;
 		overflow-y:auto;
 	}
-	div.controls>div.header{
+	#controls>div.header{
 		height:3rem;
 		text-align:center;
 		font-size:2em;
 		line-height:3rem;
 		text-transform:uppercase;
 		background-color:rgba(0,0,0,0.4);
+		cursor:pointer;
 	}
-	div.controls>form{
+	#controls>form{
 		margin:2rem auto 2rem auto;
 		text-align:center;
 	}
@@ -185,8 +186,8 @@
 	<canvas id="canvas"></canvas>
 </div>
 <div class="fixedContainer" style="z-index:2">
-	<div class="controls">
-		<div class="header">Settings</div>
+	<div id="controls">
+		<div class="header" onclick="E('controls').className=E('controls').className.isBlank()?'expanded':''">Settings</div>
 		<form action="javascript:applySettings()">
 			<div class="setting">
 				<div class="name">Saturation</div>

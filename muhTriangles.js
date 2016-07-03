@@ -1,3 +1,10 @@
+var _RAND=[];
+for(var i=0;i<2048;i++)_RAND[i]=Math.random();
+function random(x,y){
+	var i=~~((x*4753.15654214+y*3837.473437015)%_RAND.length);
+	return _RAND[i>=0?i:-i];
+}
+
 var NEUTRF=0.7;
 
 function Point(x,y,h,s,l){
@@ -6,7 +13,7 @@ function Point(x,y,h,s,l){
 	this.h=h;
 	this.s=s;
 	this.l=l;
-	this.tmul=0.1+Math.random()*0.5;
+	this.tmul=0.1+random(x,y)*0.5;
 }
 
 function Triangle(p1,p2,p3,colorMode){
@@ -18,11 +25,11 @@ function Triangle(p1,p2,p3,colorMode){
 		this.s = (p1.s + p2.s + p3.s) / 3;
 		this.l = (p1.l + p2.l + p3.l) / 3;
 	}else if(colorMode=="rough"){
-		if(Math.random()<0.33){
+		if(random(x,y)<0.33){
 			this.h=p1.h;
 			this.s=p1.s;
 			this.l=p1.l;
-		}else if(Math.random()<0.5){
+		}else if(random(x,y)<0.5){
 			this.h=p2.h;
 			this.s=p2.s;
 			this.l=p2.l;
@@ -111,11 +118,11 @@ MuhTriangles.prototype={
 				if(this.GRADIENTTYPE=="vertical") f= 1-yf*(canvas.width<canvas.height?canvas.width/canvas.height:canvas.height/canvas.width); else
 				if(this.GRADIENTTYPE=="diagonal1") f= ((1-xf*(canvas.width<canvas.height?canvas.width/canvas.height:canvas.height/canvas.width))+(1-yf*(canvas.width<canvas.height?canvas.width/canvas.height:canvas.height/canvas.width)))/2; else
 				if(this.GRADIENTTYPE=="diagonal2") f= ((xf*(canvas.width<canvas.height?canvas.width/canvas.height:canvas.height/canvas.width))+(1-yf*(canvas.width<canvas.height?canvas.width/canvas.height:canvas.height/canvas.width)))/2; else
-				if(this.GRADIENTTYPE=="random") f=0.3+Math.random()*0.7;
+				if(this.GRADIENTTYPE=="random") f=0.3+random(x,y)*0.7;
 				f=(1-this.GRADIENTINTENSITY)*NEUTRF+this.GRADIENTINTENSITY*f;
 				f=f<0?0:f>1?1:f;
 				if(this.GRADIENTINVERT) f=1-f;
-				grid[y][x]=new Point((x-3-Math.random()/this.DAMPEN)*this.SX,(y-2-Math.random()/this.DAMPEN)*this.SY,this.CUSTOMHUE!=undefined?this.CUSTOMHUE:0,40+60*f,5+60*f+15*f*f);
+				grid[y][x]=new Point((x-3-random(x,y)/this.DAMPEN)*this.SX,(y-2-random(x,y)/this.DAMPEN)*this.SY,this.CUSTOMHUE!=undefined?this.CUSTOMHUE:0,40+60*f,5+60*f+15*f*f);
 			}
 		}
 		if(this.ALGORITHM=="hexagons"){
@@ -203,5 +210,3 @@ MuhTriangles.prototype={
 }
 
 MuhTriangles.destroy=MuhTriangles.prototype.destroy;
-
-if(module && module.exports) module.exports = MuhTriangles;
