@@ -3,7 +3,7 @@
 MuhTriangles.js is a simple and lightweight library for drawing colorful and animated triangles to an HTML5 Canvas element, with a good amout of settings that you can tweak.
 
 ## See it in action
-MuhTriangles.js is the default background on [my website](http://adolfintel.com).
+[Play with the configurator](http://adolfintel.com/muhTriangles.js/editor.html).
 
 ## Compatibility
 
