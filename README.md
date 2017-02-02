@@ -3,7 +3,7 @@
 MuhTriangles.js is a simple and lightweight library for drawing colorful and animated triangles to an HTML5 Canvas element, with a good amout of settings that you can tweak.
 
 ## See it in action
-[Play with the configurator](http://adolfintel.com/muhTriangles.js/editor.html).
+[Play with the configurator](http://fdossena.com/muhTriangles.js/editor.html).
 
 ## Compatibility
 
@@ -34,37 +34,37 @@ embed.html?<string from editor>
 To use this version in your page, you will need to copy both muhTriangles.min.js and embed.html into your project.
 
 ## Screenshots
-[![Screenshot](http://adolfintel.com/muhTriangles.js/settingsp.png)](http://adolfintel.com/muhTriangles/settings.png)
-[![Screenshot](http://adolfintel.com/muhTriangles.js/1p.png)](http://adolfintel.com/muhTriangles/1.png)
-[![Screenshot](http://adolfintel.com/muhTriangles.js/2p.png)](http://adolfintel.com/muhTriangles/2.png)
-[![Screenshot](http://adolfintel.com/muhTriangles.js/3p.png)](http://adolfintel.com/muhTriangles/3.png)
-[![Screenshot](http://adolfintel.com/muhTriangles.js/4p.png)](http://adolfintel.com/muhTriangles/4.png)
-[![Screenshot](http://adolfintel.com/muhTriangles.js/5p.png)](http://adolfintel.com/muhTriangles/5.png)
-[![Screenshot](http://adolfintel.com/muhTriangles.js/6p.png)](http://adolfintel.com/muhTriangles/6.png)
-[![Screenshot](http://adolfintel.com/muhTriangles.js/7p.png)](http://adolfintel.com/muhTriangles/7.png)
-[![Screenshot](http://adolfintel.com/muhTriangles.js/8p.png)](http://adolfintel.com/muhTriangles/8.png)
-[![Screenshot](http://adolfintel.com/muhTriangles.js/9p.png)](http://adolfintel.com/muhTriangles/9.png)
-[![Screenshot](http://adolfintel.com/muhTriangles.js/10p.png)](http://adolfintel.com/muhTriangles/10.png)
-[![Screenshot](http://adolfintel.com/muhTriangles.js/11p.png)](http://adolfintel.com/muhTriangles/11.png)
-[![Screenshot](http://adolfintel.com/muhTriangles.js/12p.png)](http://adolfintel.com/muhTriangles/12.png)
-[![Screenshot](http://adolfintel.com/muhTriangles.js/13p.png)](http://adolfintel.com/muhTriangles/13.png)
-[![Screenshot](http://adolfintel.com/muhTriangles.js/14p.png)](http://adolfintel.com/muhTriangles/14.png)
-[![Screenshot](http://adolfintel.com/muhTriangles.js/15p.png)](http://adolfintel.com/muhTriangles/15.png)
-[![Screenshot](http://adolfintel.com/muhTriangles.js/16p.png)](http://adolfintel.com/muhTriangles/16.png)
-[![Screenshot](http://adolfintel.com/muhTriangles.js/17p.png)](http://adolfintel.com/muhTriangles/17.png)
-[![Screenshot](http://adolfintel.com/muhTriangles.js/a1p.png)](http://adolfintel.com/muhTriangles/a1.png)
-[![Screenshot](http://adolfintel.com/muhTriangles.js/a2p.png)](http://adolfintel.com/muhTriangles/a2.png)
-[![Screenshot](http://adolfintel.com/muhTriangles.js/a3p.png)](http://adolfintel.com/muhTriangles/a3.png)
-[![Screenshot](http://adolfintel.com/muhTriangles.js/a4p.png)](http://adolfintel.com/muhTriangles/a4.png)
-[![Screenshot](http://adolfintel.com/muhTriangles.js/a5p.png)](http://adolfintel.com/muhTriangles/a5.png)
-[![Screenshot](http://adolfintel.com/muhTriangles.js/a6p.png)](http://adolfintel.com/muhTriangles/a6.png)
-[![Screenshot](http://adolfintel.com/muhTriangles.js/a7p.png)](http://adolfintel.com/muhTriangles/a7.png)
-[![Screenshot](http://adolfintel.com/muhTriangles.js/a8p.png)](http://adolfintel.com/muhTriangles/a8.png)
-[![Screenshot](http://adolfintel.com/muhTriangles.js/a9p.png)](http://adolfintel.com/muhTriangles/a9.png)
-[![Screenshot](http://adolfintel.com/muhTriangles.js/a10p.png)](http://adolfintel.com/muhTriangles/a10.png)
-[![Screenshot](http://adolfintel.com/muhTriangles.js/a11p.png)](http://adolfintel.com/muhTriangles/a11.png)
-[![Screenshot](http://adolfintel.com/muhTriangles.js/tallp.png)](http://adolfintel.com/muhTriangles/tall.png)
-[![Screenshot](http://adolfintel.com/muhTriangles.js/widep.png)](http://adolfintel.com/muhTriangles/wide.png)
+[![Screenshot](http://fdossena.com/muhTriangles.js/settingsp.png)](http://fdossena.com/muhTriangles/settings.png)
+[![Screenshot](http://fdossena.com/muhTriangles.js/1p.png)](http://fdossena.com/muhTriangles/1.png)
+[![Screenshot](http://fdossena.com/muhTriangles.js/2p.png)](http://fdossena.com/muhTriangles/2.png)
+[![Screenshot](http://fdossena.com/muhTriangles.js/3p.png)](http://fdossena.com/muhTriangles/3.png)
+[![Screenshot](http://fdossena.com/muhTriangles.js/4p.png)](http://fdossena.com/muhTriangles/4.png)
+[![Screenshot](http://fdossena.com/muhTriangles.js/5p.png)](http://fdossena.com/muhTriangles/5.png)
+[![Screenshot](http://fdossena.com/muhTriangles.js/6p.png)](http://fdossena.com/muhTriangles/6.png)
+[![Screenshot](http://fdossena.com/muhTriangles.js/7p.png)](http://fdossena.com/muhTriangles/7.png)
+[![Screenshot](http://fdossena.com/muhTriangles.js/8p.png)](http://fdossena.com/muhTriangles/8.png)
+[![Screenshot](http://fdossena.com/muhTriangles.js/9p.png)](http://fdossena.com/muhTriangles/9.png)
+[![Screenshot](http://fdossena.com/muhTriangles.js/10p.png)](http://fdossena.com/muhTriangles/10.png)
+[![Screenshot](http://fdossena.com/muhTriangles.js/11p.png)](http://fdossena.com/muhTriangles/11.png)
+[![Screenshot](http://fdossena.com/muhTriangles.js/12p.png)](http://fdossena.com/muhTriangles/12.png)
+[![Screenshot](http://fdossena.com/muhTriangles.js/13p.png)](http://fdossena.com/muhTriangles/13.png)
+[![Screenshot](http://fdossena.com/muhTriangles.js/14p.png)](http://fdossena.com/muhTriangles/14.png)
+[![Screenshot](http://fdossena.com/muhTriangles.js/15p.png)](http://fdossena.com/muhTriangles/15.png)
+[![Screenshot](http://fdossena.com/muhTriangles.js/16p.png)](http://fdossena.com/muhTriangles/16.png)
+[![Screenshot](http://fdossena.com/muhTriangles.js/17p.png)](http://fdossena.com/muhTriangles/17.png)
+[![Screenshot](http://fdossena.com/muhTriangles.js/a1p.png)](http://fdossena.com/muhTriangles/a1.png)
+[![Screenshot](http://fdossena.com/muhTriangles.js/a2p.png)](http://fdossena.com/muhTriangles/a2.png)
+[![Screenshot](http://fdossena.com/muhTriangles.js/a3p.png)](http://fdossena.com/muhTriangles/a3.png)
+[![Screenshot](http://fdossena.com/muhTriangles.js/a4p.png)](http://fdossena.com/muhTriangles/a4.png)
+[![Screenshot](http://fdossena.com/muhTriangles.js/a5p.png)](http://fdossena.com/muhTriangles/a5.png)
+[![Screenshot](http://fdossena.com/muhTriangles.js/a6p.png)](http://fdossena.com/muhTriangles/a6.png)
+[![Screenshot](http://fdossena.com/muhTriangles.js/a7p.png)](http://fdossena.com/muhTriangles/a7.png)
+[![Screenshot](http://fdossena.com/muhTriangles.js/a8p.png)](http://fdossena.com/muhTriangles/a8.png)
+[![Screenshot](http://fdossena.com/muhTriangles.js/a9p.png)](http://fdossena.com/muhTriangles/a9.png)
+[![Screenshot](http://fdossena.com/muhTriangles.js/a10p.png)](http://fdossena.com/muhTriangles/a10.png)
+[![Screenshot](http://fdossena.com/muhTriangles.js/a11p.png)](http://fdossena.com/muhTriangles/a11.png)
+[![Screenshot](http://fdossena.com/muhTriangles.js/tallp.png)](http://fdossena.com/muhTriangles/tall.png)
+[![Screenshot](http://fdossena.com/muhTriangles.js/widep.png)](http://fdossena.com/muhTriangles/wide.png)
 
 ## License
 Copyright (C) 2016 Federico Dossena
